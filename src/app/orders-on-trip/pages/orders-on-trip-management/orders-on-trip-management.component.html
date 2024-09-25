@@ -1,0 +1,50 @@
+<app-order-on-trip-card  (cancelRequested)="onCancelRequested()"
+                         (orderOnTripAddRequested)="onOrderOnTripAddRequested($event)"
+                         (orderOnTripUpdateRequested)="onOrderOnTripUpdateRequested($event)"
+
+                         [orderOnTrip]="OrderOnTripData"
+                         [editMode]="editMode">
+
+
+
+</app-order-on-trip-card>
+
+
+<div class="card-container">
+  <!-- Recorrer la lista de órdenes -->
+  <mat-card *ngFor="let order of ordersOnTripList" class="order-card">
+
+    <!-- Imagen representativa del producto -->
+    <img mat-card-image [src]="order.imageUrl" alt="{{ order.productName }}" class="order-image">
+
+    <!-- Título y subtítulo de la tarjeta -->
+    <mat-card-header>
+      <mat-card-title>{{ order.productName }}</mat-card-title>
+      <mat-card-subtitle>Cliente: {{ order.clientName }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- Contenido de la tarjeta -->
+    <mat-card-content>
+      <p><strong>Cantidad:</strong> {{ order.quantity }}</p>
+      <p><strong>Estado:</strong> {{ order.status }}</p>
+      <p><strong>Ubicación actual:</strong> {{ order.currentLocation }}</p>
+      <p><strong>Conductor:</strong> {{ order.driverName }}</p>
+      <p><strong>Vehículo:</strong> {{ order.vehicleId }}</p>
+      <p><strong>Dirección de origen:</strong> {{ order.originAddress }}</p>
+      <p><strong>Dirección de destino:</strong> {{ order.destinationAddress }}</p>
+      <p><strong>Hora de despacho:</strong> {{ order.dispatchTime | date:'short' }}</p>
+      <p><strong>Entrega estimada:</strong> {{ order.estimatedDeliveryTime | date:'short' }}</p>
+    </mat-card-content>
+
+    <!-- Botones para editar y eliminar la orden -->
+    <mat-card-actions class="actions">
+      <button mat-icon-button color="primary" (click)="onEditItem(order)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="onDeleteItem(order)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

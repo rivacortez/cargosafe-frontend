@@ -7,24 +7,34 @@
   "driver": [
     {
       "id": 1,
-      "name": "asdsa",
-      "dni": "dasdas",
-      "phone": "dasd",
-      "license": "asd"
+      "name": "12323232",
+      "dni": "123",
+      "phone": "123",
+      "license": "213"
     },
     {
       "id": 2,
-      "name": "23dasd",
-      "dni": "dasdasd",
-      "phone": "sdasdasd",
-      "license": "asdasda"
-    },
+      "name": "21321",
+      "dni": "32132",
+      "phone": "2132",
+      "license": "3213232"
+    }
+  ],
+  "ordersOnTrip": [
     {
-      "id": 4,
-      "name": "555",
-      "dni": "52123213213",
-      "phone": "dsadas",
-      "license": "1232"
+      "clientName": "rrrrrrr",
+      "productName": "fdsfds",
+      "quantity": 2,
+      "status": "sdsad",
+      "dispatchTime": "2024-09-24T05:33",
+      "estimatedDeliveryTime": "2024-09-25T05:33",
+      "currentLocation": "sdasdas",
+      "originAddress": "asdasd",
+      "destinationAddress": "asdasd",
+      "driverName": "asdasd",
+      "vehicleId": "asdasddsd",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Spider-Man.jpg",
+      "id": 1
     }
   ],
   "vehicles": [],

@@ -14,7 +14,7 @@ export class BaseService<T> {
 
   protected basePath: string = `${environment.serverBasePath}`;
 
-  protected resourceEndpoint: string = '/drivers';
+  protected resourceEndpoint: string = '';
 
   protected handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
