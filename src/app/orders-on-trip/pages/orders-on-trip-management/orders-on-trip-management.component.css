@@ -21,6 +21,17 @@
   display: flex;
   justify-content: flex-end;
 }
+.fab-button {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+}
+.add-order-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
 
 @media (max-width: 600px) {
   .order-card {

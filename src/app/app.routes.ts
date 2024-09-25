@@ -15,5 +15,6 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pages', component: PageNotFoundComponent },
   {path:'drivers/management', component:DriverManagementComponent},
-  { path: 'orders', component: OrdersOnTripManagementComponent }
+  { path: 'orders', component: OrdersOnTripManagementComponent },
+  {path: 'ordersOnTrip',component:OrdersOnTripManagementComponent}
 ];

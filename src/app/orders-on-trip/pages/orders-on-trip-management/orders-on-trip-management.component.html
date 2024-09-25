@@ -1,19 +1,6 @@
-<app-order-on-trip-card  (cancelRequested)="onCancelRequested()"
-                         (orderOnTripAddRequested)="onOrderOnTripAddRequested($event)"
-                         (orderOnTripUpdateRequested)="onOrderOnTripUpdateRequested($event)"
-
-                         [orderOnTrip]="OrderOnTripData"
-                         [editMode]="editMode">
-
-
-
-</app-order-on-trip-card>
-
-
 <div class="card-container">
   <!-- Recorrer la lista de órdenes -->
   <mat-card *ngFor="let order of ordersOnTripList" class="order-card">
-
     <!-- Imagen representativa del producto -->
     <img mat-card-image [src]="order.imageUrl" alt="{{ order.productName }}" class="order-image">
 
@@ -48,3 +35,7 @@
   </mat-card>
 </div>
 
+<!-- Floating action button (FAB) for adding a new order -->
+<button mat-fab color="primary" class="add-order-button" (click)="openOrderDialog()">
+  <mat-icon>add</mat-icon>
+</button>

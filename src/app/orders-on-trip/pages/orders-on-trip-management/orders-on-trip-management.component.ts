@@ -12,7 +12,11 @@ import {
 } from "@angular/material/card";
 import {DatePipe, NgForOf} from "@angular/common";
 import {MatIcon} from "@angular/material/icon";
-import {MatIconButton} from "@angular/material/button";
+import {MatFabButton, MatIconButton} from "@angular/material/button";
+import {MatDialog} from "@angular/material/dialog";
+import {
+  OrdersOnTripDialogComponent
+} from "../../components/Dialog/orders-on-trip-dialog/orders-on-trip-dialog.component";
 
 @Component({
   selector: 'app-orders-on-trip-management',
@@ -29,7 +33,8 @@ import {MatIconButton} from "@angular/material/button";
     MatCardTitle,
     MatCardSubtitle,
     MatCardImage,
-    DatePipe
+    DatePipe,
+    MatFabButton
   ],
   templateUrl: './orders-on-trip-management.component.html',
   styleUrl: './orders-on-trip-management.component.css'
@@ -43,7 +48,7 @@ export class OrdersOnTripManagementComponent implements OnInit {
 
   protected editMode: boolean = false;
   private OrderOnTripService: OrderOnTripService = inject(OrderOnTripService);
-
+  private dialog: MatDialog = inject(MatDialog);
   //#endregion
 
   //#region Methods
@@ -52,6 +57,23 @@ export class OrdersOnTripManagementComponent implements OnInit {
     this.editMode = false;
     this.OrderOnTripData = new OrderOnTripEntity({});
     console.log(this.OrderOnTripData);
+  }
+  openOrderDialog(orderOnTrip?: OrderOnTripEntity, editMode: boolean = false): void {
+    const dialogRef = this.dialog.open(OrdersOnTripDialogComponent, {
+      width: '500px',
+      data: { orderOnTrip: orderOnTrip || new OrderOnTripEntity({}), editMode: editMode }
+    });
+
+    // When the dialog is closed, process the result
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        if (editMode) {
+          this.onOrderOnTripUpdateRequested(result);
+        } else {
+          this.onOrderOnTripAddRequested(result);
+        }
+      }
+    });
   }
 
   protected onEditItem(item: OrderOnTripEntity) {

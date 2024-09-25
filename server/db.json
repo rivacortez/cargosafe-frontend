@@ -22,19 +22,13 @@
   ],
   "ordersOnTrip": [
     {
-      "clientName": "rrrrrrr",
-      "productName": "fdsfds",
-      "quantity": 2,
-      "status": "sdsad",
-      "dispatchTime": "2024-09-24T05:33",
-      "estimatedDeliveryTime": "2024-09-25T05:33",
-      "currentLocation": "sdasdas",
-      "originAddress": "asdasd",
-      "destinationAddress": "asdasd",
-      "driverName": "asdasd",
-      "vehicleId": "asdasddsd",
-      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/52/Spider-Man.jpg",
       "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
     }
   ],
   "vehicles": [],
