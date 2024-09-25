@@ -4,7 +4,29 @@
   "memberships": [],
   "users": [],
   "entrepreneurs": [],
-  "driver": [],
+  "driver": [
+    {
+      "id": 1,
+      "name": "asdsa",
+      "dni": "dasdas",
+      "phone": "dasd",
+      "license": "asd"
+    },
+    {
+      "id": 2,
+      "name": "23dasd",
+      "dni": "dasdasd",
+      "phone": "sdasdasd",
+      "license": "asdasda"
+    },
+    {
+      "id": 4,
+      "name": "555",
+      "dni": "52123213213",
+      "phone": "dsadas",
+      "license": "1232"
+    }
+  ],
   "vehicles": [],
   "trips": [],
   "expenses": [],

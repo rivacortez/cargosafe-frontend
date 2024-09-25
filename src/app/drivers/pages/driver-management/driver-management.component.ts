@@ -14,8 +14,13 @@ import {DriverService} from "../../services/driver.service";
 import {
   DriversCreateAndEditComponent
 } from "../../components/drivers-create-and-edit/drivers-create-and-edit.component";
-import {MatIcon} from "@angular/material/icon";
+import {MatIcon, MatIconModule} from "@angular/material/icon";
 import {NgClass} from "@angular/common";
+import {MatButton, MatIconButton} from "@angular/material/button";
+import {MatFormField, MatLabel} from "@angular/material/form-field";
+import {FormsModule} from "@angular/forms";
+import {MatInput} from "@angular/material/input";
+import {MatCard, MatCardTitle} from "@angular/material/card";
 
 @Component({
   selector: 'app-driver-management',
@@ -36,7 +41,16 @@ import {NgClass} from "@angular/common";
     MatRowDef,
     MatHeaderRowDef,
     MatRow,
-    MatPaginator
+    MatPaginator,
+    MatIconModule,
+    MatIconButton,
+    MatFormField,
+    FormsModule,
+    MatInput,
+    MatButton,
+    MatLabel,
+    MatCardTitle,
+    MatCard
   ],
   templateUrl: './driver-management.component.html',
   styleUrl: './driver-management.component.css'
@@ -46,7 +60,7 @@ export class DriverManagementComponent implements OnInit, AfterViewInit {
   //#region Attributes
 
   protected driverData!: DriverEntity;
-  protected columnsToDisplay: string[] = ['id', 'name', 'dni', 'phone','license'];
+  protected columnsToDisplay: string[] = ['id', 'name', 'dni', 'phone','license', 'actions'];
   @ViewChild(MatPaginator, {static: false})
   protected paginator!: MatPaginator;
   @ViewChild(MatSort)
@@ -64,6 +78,22 @@ export class DriverManagementComponent implements OnInit, AfterViewInit {
     this.driverData = new DriverEntity({});
     this.dataSource = new MatTableDataSource();
     console.log(this.driverData);
+  }
+  onSubmit(): void {
+    if (this.editMode) {
+      // Si estamos en modo edición, actualizamos el conductor existente
+      this.onDriverUpdateRequested(this.driverData!); // Asegúrate de que driverData no es null
+    } else {
+      // Si no estamos en modo edición, añadimos un nuevo conductor
+      const newDriver: DriverEntity = {
+        id: this.dataSource.data.length + 1, // Crear un ID único (esto debería mejorar con una lógica de backend)
+        name: this.driverData?.name || '',
+        dni: this.driverData?.dni || '',
+        phone: this.driverData?.phone || '',
+        license: this.driverData?.license || ''
+      };
+      this.onDriverAddRequested(newDriver);
+    }
   }
 
   protected onEditItem(item: DriverEntity) {

@@ -1,13 +1,32 @@
-.table-wrapper {
-  width: 1024px;
-  margin: 50px auto;
-}
-
-table {
+.driver-management-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-tr.editable-row {
-  background-color: lightblue;
+.driver-form-card,
+.driver-table-card {
+  width: 80%; /* Ajusta el ancho de las tarjetas */
+  max-width: 1200px;
+  margin: 20px auto;
 }
 
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.driver-mat-card-tittle{
+  align-content: center;
+  left: auto;
+}
+
+@media (max-width: 768px) {
+  .driver-form-card,
+  .driver-table-card {
+    width: 100%;
+  }
+}
