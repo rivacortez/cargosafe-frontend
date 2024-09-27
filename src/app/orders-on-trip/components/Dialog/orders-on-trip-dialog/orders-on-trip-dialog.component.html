@@ -1,83 +1,85 @@
-<h2 mat-dialog-title class="text-center">{{ editMode ? 'Edit Order' : 'New Order' }}
-  <button mat-icon-button (click)="onCancel()" aria-label="Close" class="close-button">
-    <mat-icon>close</mat-icon>
+<h1 mat-dialog-title>{{ editMode ? 'Editar Orden' : 'Agregar Orden' }}</h1>
+<div mat-dialog-content>
+  <form #orderForm="ngForm">
+
+    <mat-form-field>
+      <mat-label>Cliente</mat-label>
+      <input matInput [(ngModel)]="orderOnTrip.clientName" name="clientName" required placeholder="Ingresa el nombre del cliente">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Producto</mat-label>
+      <input matInput [(ngModel)]="orderOnTrip.productName" name="productName" required placeholder="Ingresa el nombre del producto">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Cantidad</mat-label>
+      <input matInput type="number" [(ngModel)]="orderOnTrip.quantity" name="quantity" required placeholder="Ingresa la cantidad">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Estado</mat-label>
+      <input matInput [(ngModel)]="orderOnTrip.status" name="status" required placeholder="Ingresa el estado">
+    </mat-form-field>
+
+
+    <div class="form-group">
+      <label for="dispatchTime">Tiempo de Despacho</label>
+      <input type="date" id="dispatchTime" [(ngModel)]="orderOnTrip.dispatchTime" name="dispatchTime" class="form-control" required placeholder="Selecciona el tiempo de despacho">
+    </div>
+
+
+    <div class="form-group">
+      <label for="estimatedDeliveryTime">Tiempo Estimado de Entrega</label>
+      <input type="date" id="estimatedDeliveryTime" [(ngModel)]="orderOnTrip.estimatedDeliveryTime" name="estimatedDeliveryTime" class="form-control" required placeholder="Selecciona el tiempo estimado de entrega">
+    </div>
+
+
+
+    <mat-form-field>
+      <mat-label>Ubicación Actual</mat-label>
+      <input matInput [(ngModel)]="orderOnTrip.currentLocation" name="currentLocation" required placeholder="Ingresa la ubicación actual">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Dirección de Origen</mat-label>
+      <input matInput [(ngModel)]="orderOnTrip.originAddress" name="originAddress" required placeholder="Ingresa la dirección de origen">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Dirección de Destino</mat-label>
+      <input matInput [(ngModel)]="orderOnTrip.destinationAddress" name="destinationAddress" required placeholder="Ingresa la dirección de destino">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Nombre del Conductor</mat-label>
+      <input matInput [(ngModel)]="orderOnTrip.driverName" name="driverName" required placeholder="Ingresa el nombre del conductor">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>ID del Vehículo</mat-label>
+      <input matInput [(ngModel)]="orderOnTrip.vehicleId" name="vehicleId" required placeholder="Ingresa el ID del vehículo">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>URL de la Imagen</mat-label>
+      <input matInput type="url" [(ngModel)]="orderOnTrip.imageUrl" name="imageUrl" required placeholder="Ingresa la URL de la imagen">
+    </mat-form-field>
+
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button [disabled]="orderForm.invalid" (click)="onSubmit(orderForm)">
+    {{ editMode ? 'Actualizar' : 'Agregar' }}
   </button>
-</h2>
-
-<form #orderOnTripForm="ngForm" (ngSubmit)="onSubmit(orderOnTripForm)" class="form-container">
-
-  <mat-form-field appearance="fill">
-    <mat-label>Client Name</mat-label>
-    <input matInput id="clientName" name="clientName" required [(ngModel)]="orderOnTrip.clientName" placeholder="Enter client name">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Product Name</mat-label>
-    <input matInput id="productName" name="productName" required [(ngModel)]="orderOnTrip.productName" placeholder="Enter product name">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Quantity</mat-label>
-    <input matInput type="number" id="quantity" name="quantity" required [(ngModel)]="orderOnTrip.quantity" placeholder="Enter quantity">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Status</mat-label>
-    <input matInput id="status" name="status" required [(ngModel)]="orderOnTrip.status" placeholder="Enter status">
-  </mat-form-field>
-
-  <!-- Campo para Dispatch Time con Datepicker -->
-  <mat-form-field appearance="fill">
-    <mat-label>Dispatch Time</mat-label>
-    <input matInput [matDatepicker]="dispatchDatepicker" id="dispatchTime" name="dispatchTime" required [(ngModel)]="orderOnTrip.dispatchTime" placeholder="Choose a dispatch time">
-    <mat-datepicker-toggle matSuffix [for]="dispatchDatepicker"></mat-datepicker-toggle>
-    <mat-datepicker #dispatchDatepicker></mat-datepicker>
-  </mat-form-field>
-
-  <!-- Campo para Estimated Delivery Time con Datepicker -->
-  <mat-form-field appearance="fill">
-    <mat-label>Estimated Delivery Time</mat-label>
-    <input matInput [matDatepicker]="deliveryDatepicker" id="estimatedDeliveryTime" name="estimatedDeliveryTime" required [(ngModel)]="orderOnTrip.estimatedDeliveryTime" placeholder="Choose a delivery time">
-    <mat-datepicker-toggle matSuffix [for]="deliveryDatepicker"></mat-datepicker-toggle>
-    <mat-datepicker #deliveryDatepicker></mat-datepicker>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Current Location</mat-label>
-    <input matInput id="currentLocation" name="currentLocation" required [(ngModel)]="orderOnTrip.currentLocation" placeholder="Enter current location">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Origin Address</mat-label>
-    <input matInput id="originAddress" name="originAddress" required [(ngModel)]="orderOnTrip.originAddress" placeholder="Enter origin address">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Destination Address</mat-label>
-    <input matInput id="destinationAddress" name="destinationAddress" required [(ngModel)]="orderOnTrip.destinationAddress" placeholder="Enter destination address">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Driver Name</mat-label>
-    <input matInput id="driverName" name="driverName" required [(ngModel)]="orderOnTrip.driverName" placeholder="Enter driver name">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Vehicle ID</mat-label>
-    <input matInput id="vehicleId" name="vehicleId" required [(ngModel)]="orderOnTrip.vehicleId" placeholder="Enter vehicle ID">
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Image URL</mat-label>
-    <input matInput type="url" id="imageUrl" name="imageUrl" required [(ngModel)]="orderOnTrip.imageUrl" placeholder="Enter image URL">
-  </mat-form-field>
-
-  <div class="button-container">
-    <button mat-button type="button" (click)="onCancel()">Cancel</button>
-    <button mat-raised-button color="primary" type="submit">Add</button>
-  </div>
-
-  <div *ngIf="isFormTouchedAndInvalid(orderOnTripForm)" class="error-message">
-    Please fill in all required fields.
-  </div>
-</form>
+</div>

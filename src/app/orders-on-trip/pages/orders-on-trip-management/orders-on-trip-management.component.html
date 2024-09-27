@@ -1,16 +1,16 @@
 <div class="card-container">
-  <!-- Recorrer la lista de órdenes -->
+
   <mat-card *ngFor="let order of ordersOnTripList" class="order-card">
-    <!-- Imagen representativa del producto -->
+
     <img mat-card-image [src]="order.imageUrl" alt="{{ order.productName }}" class="order-image">
 
-    <!-- Título y subtítulo de la tarjeta -->
+
     <mat-card-header>
       <mat-card-title>{{ order.productName }}</mat-card-title>
       <mat-card-subtitle>Cliente: {{ order.clientName }}</mat-card-subtitle>
     </mat-card-header>
 
-    <!-- Contenido de la tarjeta -->
+
     <mat-card-content>
       <p><strong>Cantidad:</strong> {{ order.quantity }}</p>
       <p><strong>Estado:</strong> {{ order.status }}</p>
@@ -23,7 +23,7 @@
       <p><strong>Entrega estimada:</strong> {{ order.estimatedDeliveryTime | date:'short' }}</p>
     </mat-card-content>
 
-    <!-- Botones para editar y eliminar la orden -->
+
     <mat-card-actions class="actions">
       <button mat-icon-button color="primary" (click)="onEditItem(order)">
         <mat-icon>edit</mat-icon>
@@ -35,7 +35,7 @@
   </mat-card>
 </div>
 
-<!-- Floating action button (FAB) for adding a new order -->
+
 <button mat-fab color="primary" class="add-order-button" (click)="openOrderDialog()">
   <mat-icon>add</mat-icon>
 </button>

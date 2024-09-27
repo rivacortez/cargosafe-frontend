@@ -22,13 +22,19 @@
   ],
   "ordersOnTrip": [
     {
+      "clientName": "Roberto",
+      "productName": "Queso",
+      "quantity": 10,
+      "status": "En Espera",
+      "dispatchTime": "2024-09-26",
+      "estimatedDeliveryTime": "2024-09-30",
+      "currentLocation": "Piura",
+      "originAddress": "Talara",
+      "destinationAddress": "Lima",
+      "driverName": "Pedro",
+      "vehicleId": "45345-334-234",
+      "imageUrl": "https://www.lacasadelqueso.com.ar/wp-content/uploads/2017/08/parmigiano-reggiano.jpg",
       "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
     }
   ],
   "vehicles": [],

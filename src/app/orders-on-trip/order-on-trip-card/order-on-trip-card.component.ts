@@ -23,6 +23,7 @@ import {
   MatCardTitle
 } from "@angular/material/card";
 import {FormsModule, NgForm} from "@angular/forms";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @Component({
   selector: 'app-order-on-trip-card',
@@ -50,7 +51,8 @@ import {FormsModule, NgForm} from "@angular/forms";
     FormsModule,
     MatCardTitle,
     MatCardSubtitle,
-    DatePipe
+    DatePipe,
+    MatNativeDateModule
   ],
   templateUrl: './order-on-trip-card.component.html',
   styleUrl: './order-on-trip-card.component.css'

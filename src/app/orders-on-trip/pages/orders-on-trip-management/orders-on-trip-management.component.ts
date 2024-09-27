@@ -40,13 +40,11 @@ import {
   styleUrl: './orders-on-trip-management.component.css'
 })
 export class OrdersOnTripManagementComponent implements OnInit {
-
   //#region Attributes
-
   protected OrderOnTripData!: OrderOnTripEntity;
   protected ordersOnTripList: Array<OrderOnTripEntity> = [];
-
   protected editMode: boolean = false;
+
   private OrderOnTripService: OrderOnTripService = inject(OrderOnTripService);
   private dialog: MatDialog = inject(MatDialog);
   //#endregion
@@ -56,29 +54,28 @@ export class OrdersOnTripManagementComponent implements OnInit {
   constructor() {
     this.editMode = false;
     this.OrderOnTripData = new OrderOnTripEntity({});
-    console.log(this.OrderOnTripData);
   }
+
   openOrderDialog(orderOnTrip?: OrderOnTripEntity, editMode: boolean = false): void {
     const dialogRef = this.dialog.open(OrdersOnTripDialogComponent, {
       width: '500px',
       data: { orderOnTrip: orderOnTrip || new OrderOnTripEntity({}), editMode: editMode }
     });
 
-    // When the dialog is closed, process the result
+
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        if (editMode) {
-          this.onOrderOnTripUpdateRequested(result);
-        } else {
-          this.onOrderOnTripAddRequested(result);
+      if (result?.action) {
+        if (result.action === 'add') {
+          this.onOrderOnTripAddRequested(result.order);
+        } else if (result.action === 'update') {
+          this.onOrderOnTripUpdateRequested(result.order);
         }
       }
     });
   }
 
   protected onEditItem(item: OrderOnTripEntity) {
-    this.editMode = true;
-    this.OrderOnTripData = item;
+    this.openOrderDialog(item, true);
   }
 
   protected onDeleteItem(item: OrderOnTripEntity) {
@@ -113,7 +110,6 @@ export class OrdersOnTripManagementComponent implements OnInit {
     });
   }
 
-
   private createOrderOnTrip() {
     const newOrder = {
       clientName: this.OrderOnTripData.clientName,
@@ -135,12 +131,10 @@ export class OrdersOnTripManagementComponent implements OnInit {
     });
   }
 
-
-
   private updateOrderOnTrip() {
-    let OrderOnTripToUpdate = this.OrderOnTripData;
-    this.OrderOnTripService.update(OrderOnTripToUpdate.id, OrderOnTripToUpdate).subscribe((response: OrderOnTripEntity) => {
-      let index = this.ordersOnTripList.findIndex((OrderOnTrip: OrderOnTripEntity) => OrderOnTrip.id === OrderOnTripToUpdate.id);
+    const orderToUpdate = this.OrderOnTripData;
+    this.OrderOnTripService.update(orderToUpdate.id, orderToUpdate).subscribe((response: OrderOnTripEntity) => {
+      const index = this.ordersOnTripList.findIndex(order => order.id === orderToUpdate.id);
       if (index > -1) {
         this.ordersOnTripList[index] = response;
       }
@@ -149,14 +143,12 @@ export class OrdersOnTripManagementComponent implements OnInit {
 
   private deleteOrderOnTrip(id: number) {
     this.OrderOnTripService.delete(id).subscribe(() => {
-      this.ordersOnTripList = this.ordersOnTripList.filter((OrderOnTrip: OrderOnTripEntity) => OrderOnTrip.id !== id);
+      this.ordersOnTripList = this.ordersOnTripList.filter(order => order.id !== id);
     });
   }
-
-
 
   ngOnInit(): void {
     this.getAllOrderOnTrip();
   }
-
+  //#endregion
 }
