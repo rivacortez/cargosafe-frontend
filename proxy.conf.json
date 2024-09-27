@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://cargosafe-fake-api.vercel.app",
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

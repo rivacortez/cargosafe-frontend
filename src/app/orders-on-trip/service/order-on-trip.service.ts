@@ -10,7 +10,7 @@ export class OrderOnTripService extends  BaseService<OrderOnTripEntity> {
 
   constructor() {
     super();
-    this.resourceEndpoint = '/ordersOnTrip';
+    this.resourceEndpoint = 'ordersOnTrip';
   }
 
 }

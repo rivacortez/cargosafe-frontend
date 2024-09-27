@@ -7,58 +7,138 @@
   "driver": [
     {
       "id": 1,
-      "name": "12323232",
-      "dni": "123",
-      "phone": "123",
-      "license": "213"
+      "name": "Juan Perez",
+      "dni": "12345678",
+      "phone": "912345678",
+      "license": "654321",
+      "url_image": "https://randomuser.me/api/portraits/men/1.jpg"
     },
     {
       "id": 2,
-      "name": "21321",
-      "dni": "32132",
-      "phone": "2132",
-      "license": "3213232"
+      "name": "Maria Garcia",
+      "dni": "87654321",
+      "phone": "987654321",
+      "license": "123456",
+      "url_image": "https://randomuser.me/api/portraits/women/2.jpg"
     },
     {
       "id": 3,
-      "name": "pedro",
-      "dni": "737247234",
-      "phone": "34234234",
-      "license": "234234"
+      "name": "Pedro Sanchez",
+      "dni": "11223344",
+      "phone": "911223344",
+      "license": "112233",
+      "url_image": "https://randomuser.me/api/portraits/men/3.jpg"
     },
     {
       "id": 4,
-      "name": "jorge",
-      "dni": "234234234",
-      "phone": "934234234",
-      "license": "fsdfsdfd"
+      "name": "Jorge Ramirez",
+      "dni": "44332211",
+      "phone": "944332211",
+      "license": "334455",
+      "url_image": "https://randomuser.me/api/portraits/men/4.jpg"
     }
   ],
-  "ordersOnTrip": [],
-  "vehicles": [
+  "ordersOnTrip": [
     {
       "id": 1,
-      "model": "modelo1 ",
-      "plate": "1232132",
-      "max_load": "1500",
-      "volume": "12",
-      "url_image": "https://transpep.com.pe/wp-content/uploads/2020/10/camion-02-1.jpg"
+      "clientName": "Juan Pérez",
+      "productName": "Leche Entera Lactosa",
+      "quantity": 10,
+      "status": "En tránsito",
+      "dispatchTime": "2024-09-25T08:30:00Z",
+      "estimatedDeliveryTime": "2024-09-27T12:00:00Z",
+      "currentLocation": "Lima, Perú",
+      "originAddress": "Av. Lechera 123, Lima, Perú",
+      "destinationAddress": "Calle Leche 456, Arequipa, Perú",
+      "driverName": "Carlos Ruiz",
+      "vehicleId": "V001",
+      "imageUrl": "https://lactosa.org/wp-content/uploads/2020/04/leche-paquete-mercadona-kpkD-620x349@abc.jpg"
     },
     {
       "id": 2,
-      "model": "modelo2",
-      "plate": "4564564",
-      "max_load": "2000",
-      "volume": "15",
-      "url_image": "https://transpep.com.pe/wp-content/uploads/2020/10/camion-03-1.jpg"
+      "clientName": "Ana Gómez",
+      "productName": "Yogur Natural",
+      "quantity": 50,
+      "status": "Entregado",
+      "dispatchTime": "2024-09-24T10:15:00Z",
+      "estimatedDeliveryTime": "2024-09-26T14:00:00Z",
+      "currentLocation": "Cusco, Perú",
+      "originAddress": "Calle Yogur 789, Lima, Perú",
+      "destinationAddress": "Av. Salud 654, Cusco, Perú",
+      "driverName": "Luis Martínez",
+      "vehicleId": "V002",
+      "imageUrl": "https://vitrina-emprendimiento-rural.aureliollano.org.co/wp-content/uploads/2023/03/producto-yogurt-litro-de-leche-de-cabra-El-cerrito-productos-lacteos.jpg"
     },
     {
       "id": 3,
-      "model": "modelo3",
-      "plate": "7897897",
-      "max_load": "2500",
-      "volume": "18",
-      "url_image": "https://transpep.com.pe/wp-content/uploads/2020/10/camion-04-1.jpg"
+      "clientName": "Pedro Rodríguez",
+      "productName": "Queso Fresco",
+      "quantity": 20,
+      "status": "Pendiente",
+      "dispatchTime": "2024-09-23T09:00:00Z",
+      "estimatedDeliveryTime": "2024-09-25T11:00:00Z",
+      "currentLocation": "Trujillo, Perú",
+      "originAddress": "Calle Queso 321, Lima, Perú",
+      "destinationAddress": "Calle Fresco 123, Trujillo, Perú",
+      "driverName": "María Fernández",
+      "vehicleId": "V003",
+      "imageUrl": "https://img.freepik.com/fotos-premium/surtido-queso-fresco-diferente_1398-6260.jpg"
+    },
+    {
+      "id": 4,
+      "clientName": "Laura Martínez",
+      "productName": "Mantequilla",
+      "quantity": 30,
+      "status": "En tránsito",
+      "dispatchTime": "2024-09-26T07:45:00Z",
+      "estimatedDeliveryTime": "2024-09-28T09:30:00Z",
+      "currentLocation": "Ica, Perú",
+      "originAddress": "Av. Mantequilla 456, Lima, Perú",
+      "destinationAddress": "Calle Sabor 789, Ica, Perú",
+      "driverName": "Jorge Pérez",
+      "vehicleId": "V004",
+      "imageUrl": "https://milqueso.com/wp-content/uploads/2022/02/Mantequilla-Natural-Bloque.png"
+    },
+    {
+      "id": 5,
+      "clientName": "Sofía López",
+      "productName": "Crema de Leche",
+      "quantity": 15,
+      "status": "Entregado",
+      "dispatchTime": "2024-09-24T14:30:00Z",
+      "estimatedDeliveryTime": "2024-09-26T16:00:00Z",
+      "currentLocation": "Arequipa, Perú",
+      "originAddress": "Calle Crema 321, Lima, Perú",
+      "destinationAddress": "Calle Postre 654, Arequipa, Perú",
+      "driverName": "Andrés Jiménez",
+      "vehicleId": "V005",
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/H52b1550b98954171ae3e830c98c2b18d1.jpg"
+    }
+  ],
+  "vehicles": [
+    {
+      "id": 1,
+      "model": "Volvo FH",
+      "plate": "ABC-123",
+      "max_load": "18000",
+      "volume": "40",
+      "url_image": "https://www.novologistica.com/wp-content/uploads/2020/03/volvofh.jpg"
+    },
+    {
+      "id": 2,
+      "model": "Scania R500",
+      "plate": "DEF-456",
+      "max_load": "20000",
+      "volume": "45",
+      "url_image": "https://www.degrootetrucks.com/sites/degroote/files/uploads/b3/24074869-3.JPG"
+    },
+    {
+      "id": 3,
+      "model": "Mercedes-Benz Actros",
+      "plate": "GHI-789",
+      "max_load": "22000",
+      "volume": "50",
+      "url_image": "https://img.linemedia.com/img/s/box-truck-Mercedes-Benz-Actros-2542---1708193832047511762_big--24021720075948461400.jpg"
     }
   ],
   "trips": [],

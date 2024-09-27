@@ -9,7 +9,7 @@ export class DriverService extends  BaseService<DriverEntity>{
 
   constructor() {
    super();
-   this.resourceEndpoint = '/driver';
+   this.resourceEndpoint = 'driver';
 
   }
 }
