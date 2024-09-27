@@ -20,10 +20,10 @@ export class LeftSidebarComponent {
     {
       routeLink: 'home',
       icon: 'fal fa-home',
-      label: 'Dashboard',
+      label: 'home',
     },
     {
-      routeLink: 'Register',
+      routeLink: 'ordersOnTrip',
       icon: 'fal fa-box-open',
       label: 'Products',
     },

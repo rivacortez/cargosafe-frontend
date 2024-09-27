@@ -10,7 +10,7 @@ import {
 } from "./orders-on-trip/pages/orders-on-trip-management/orders-on-trip-management.component";
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'home', component: HomeComponent },
   { path: 'pages', component: PageNotFoundComponent },
