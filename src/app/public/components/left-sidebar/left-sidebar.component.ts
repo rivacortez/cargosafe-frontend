@@ -33,9 +33,9 @@ export class LeftSidebarComponent {
       label: 'drivers',
     },
     {
-      routeLink: 'Vehicles',
-      icon: 'fal fa-file',
-      label: 'Pages',
+      routeLink: 'vehicles/management',
+      icon: 'fal fa-vehicles',
+      label: 'vehicles/management',
     },
     {
       routeLink: 'settings',
