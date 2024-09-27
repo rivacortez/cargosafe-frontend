@@ -1,32 +1,52 @@
-.driver-management-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.driver-form-card,
-.driver-table-card {
-  width: 80%; /* Ajusta el ancho de las tarjetas */
-  max-width: 1200px;
-  margin: 20px auto;
-}
-
+/* Estilos generales para el contenedor de la tabla */
 .table-wrapper {
+  width: 100vw; /* Hacer que el contenedor de la tabla ocupe el 100% del ancho de la ventana */
+  height: 100vh; /* Hacer que el contenedor de la tabla ocupe el 100% de la altura de la ventana */
+  margin: 0; /* Eliminar márgenes */
   overflow-x: auto;
 }
 
-.driver-mat-card-tittle{
-  align-content: center;
-  left: auto;
+mat-card {
+  width: 100%; /* Hacer que la card ocupe el 100% del ancho */
+  height: 100%; /* Hacer que la card ocupe el 100% de la altura */
+  margin: 0; /* Eliminar márgenes */
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 768px) {
-  .driver-form-card,
-  .driver-table-card {
-    width: 100%;
+.table-wrapper table {
+  width: 100%; /* Asegurar que la tabla ocupe todo el ancho del contenedor */
+  height: 100%; /* Asegurar que la tabla ocupe todo el alto del contenedor */
+  font-size: 1.2rem; /* Aumentar ligeramente el tamaño del texto */
+}
+
+.mat-header-cell, .mat-cell {
+  padding: 16px; /* Espacio más amplio en las celdas */
+}
+
+img {
+  width: 200px; /* Aumentar el tamaño de las imágenes */
+  height: auto; /* Mantener la proporción de las imágenes */
+}
+
+/* Ajustes específicos para pantallas más grandes */
+@media screen and (min-width: 768px) {
+  .table-wrapper {
+    width: 100vw; /* Asegurarse de que ocupe todo el ancho de la ventana */
+    height: 100vh; /* Asegurarse de que ocupe todo el alto de la ventana */
+  }
+
+  table {
+    width: 100%; /* Asegurar que la tabla ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegurar que la tabla ocupe todo el alto del contenedor */
+    font-size: 1.2rem; /* Aumentar ligeramente el tamaño del texto */
+  }
+
+  .mat-header-cell, .mat-cell {
+    padding: 16px; /* Espacio más amplio en las celdas */
+  }
+
+  img {
+    width: 200px; /* Ajustar el tamaño de las imágenes según sea necesario */
   }
 }

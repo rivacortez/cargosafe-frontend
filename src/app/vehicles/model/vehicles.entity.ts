@@ -1,5 +1,3 @@
-import {model} from "@angular/core";
-
 export class VehiclesEntity {
 
   id: number;
@@ -8,13 +6,15 @@ export class VehiclesEntity {
   max_load: string;
   volume: string;
   url_image: string;
-  constructor(vehicles:{id?: number, model?: string, plate?: string, max_load?: string, volume?: string, url_image?: string} ) {
-    this.id = vehicles.id || 0;
-    this.model = vehicles.model || '';
-    this.plate = vehicles.plate || '';
-    this.max_load = vehicles.max_load || '';
-    this.volume = vehicles.volume || '';
-    this.url_image = vehicles.url_image || '';
-  }
 
+  constructor(vehicle: {id?: number, model?: string, plate?: string, max_load?: string, volume?: string, url_image?: string}) {
+    this.id = vehicle.id || 0;
+    this.model = vehicle.model || '';
+    this.plate = vehicle.plate || '';
+    this.max_load = vehicle.max_load || '';
+    this.volume = vehicle.volume || '';
+    this.url_image = vehicle.url_image || '';
+  }
 }
+
+

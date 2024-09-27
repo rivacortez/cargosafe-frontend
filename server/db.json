@@ -18,41 +18,49 @@
       "dni": "32132",
       "phone": "2132",
       "license": "3213232"
-    }
-  ],
-  "ordersOnTrip": [
-    {
-      "clientName": "Roberto",
-      "productName": "Queso",
-      "quantity": 10,
-      "status": "En Espera",
-      "dispatchTime": "2024-09-26",
-      "estimatedDeliveryTime": "2024-09-30",
-      "currentLocation": "Piura",
-      "originAddress": "Talara",
-      "destinationAddress": "Lima",
-      "driverName": "Pedro",
-      "vehicleId": "45345-334-234",
-      "imageUrl": "https://www.lacasadelqueso.com.ar/wp-content/uploads/2017/08/parmigiano-reggiano.jpg",
-      "id": 1
     },
     {
-      "clientName": "Pedro",
-      "productName": "Carne",
-      "quantity": 100,
-      "status": "Pendiente",
-      "dispatchTime": "2024-09-20",
-      "estimatedDeliveryTime": "2024-09-30",
-      "currentLocation": "Arequipa",
-      "originAddress": "direccion 1",
-      "destinationAddress": "Lima",
-      "driverName": "Carlos",
-      "vehicleId": "123213-3454-23213",
-      "imageUrl": "https://tienda.valledor.cl/cdn/shop/articles/carne-al-vacio-2_1_620x.jpg?v=1669398678",
-      "id": 2
+      "id": 3,
+      "name": "pedro",
+      "dni": "737247234",
+      "phone": "34234234",
+      "license": "234234"
+    },
+    {
+      "id": 4,
+      "name": "jorge",
+      "dni": "234234234",
+      "phone": "934234234",
+      "license": "fsdfsdfd"
     }
   ],
-  "vehicles": [],
+  "ordersOnTrip": [],
+  "vehicles": [
+    {
+      "id": 1,
+      "model": "modelo1 ",
+      "plate": "1232132",
+      "max_load": "1500",
+      "volume": "12",
+      "url_image": "https://transpep.com.pe/wp-content/uploads/2020/10/camion-02-1.jpg"
+    },
+    {
+      "id": 2,
+      "model": "modelo2",
+      "plate": "4564564",
+      "max_load": "2000",
+      "volume": "15",
+      "url_image": "https://transpep.com.pe/wp-content/uploads/2020/10/camion-03-1.jpg"
+    },
+    {
+      "id": 3,
+      "model": "modelo3",
+      "plate": "7897897",
+      "max_load": "2500",
+      "volume": "18",
+      "url_image": "https://transpep.com.pe/wp-content/uploads/2020/10/camion-04-1.jpg"
+    }
+  ],
   "trips": [],
   "expenses": [],
   "alerts": [],

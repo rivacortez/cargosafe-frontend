@@ -8,6 +8,8 @@ import {OrderOnTripCardComponent} from "./orders-on-trip/order-on-trip-card/orde
 import {
   OrdersOnTripManagementComponent
 } from "./orders-on-trip/pages/orders-on-trip-management/orders-on-trip-management.component";
+import {VehiclesManagementComponent} from "./vehicles/pages/vehicles-management/vehicles-management.component";
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +17,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pages', component: PageNotFoundComponent },
   {path:'drivers/management', component:DriverManagementComponent},
+  {path: 'vehicles/management',component:VehiclesManagementComponent},
   { path: 'orders', component: OrdersOnTripManagementComponent },
   {path: 'ordersOnTrip',component:OrdersOnTripManagementComponent}
 ];

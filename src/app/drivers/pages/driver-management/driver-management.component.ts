@@ -81,12 +81,12 @@ export class DriverManagementComponent implements OnInit, AfterViewInit {
   }
   onSubmit(): void {
     if (this.editMode) {
-      // Si estamos en modo edición, actualizamos el conductor existente
-      this.onDriverUpdateRequested(this.driverData!); // Asegúrate de que driverData no es null
+
+      this.onDriverUpdateRequested(this.driverData!);
     } else {
-      // Si no estamos en modo edición, añadimos un nuevo conductor
+
       const newDriver: DriverEntity = {
-        id: this.dataSource.data.length + 1, // Crear un ID único (esto debería mejorar con una lógica de backend)
+        id: this.dataSource.data.length + 1,
         name: this.driverData?.name || '',
         dni: this.driverData?.dni || '',
         phone: this.driverData?.phone || '',
