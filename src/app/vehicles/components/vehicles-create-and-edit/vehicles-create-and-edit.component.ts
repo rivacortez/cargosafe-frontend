@@ -1,11 +1,21 @@
 import {Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import {VehiclesEntity} from "../../model/vehicles.entity";
-import {NgForm} from "@angular/forms";
+import {FormsModule, NgForm} from "@angular/forms";
+import {MatFormField} from "@angular/material/form-field";
+import {MatInput} from "@angular/material/input";
+import {MatButton} from "@angular/material/button";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-vehicles-create-and-edit',
   standalone: true,
-  imports: [],
+  imports: [
+    MatFormField,
+    MatInput,
+    MatButton,
+    FormsModule,
+    NgIf
+  ],
   templateUrl: './vehicles-create-and-edit.component.html',
   styleUrl: './vehicles-create-and-edit.component.css'
 })

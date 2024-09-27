@@ -1,1 +1,26 @@
-<p>vehicles-create-and-edit works!</p>
+<!-- Create and Edit Course -->
+<h2> {{ editMode ? 'Edit Vehicle' : 'Vehicle Management' }}</h2>
+<div class="form-section">
+  <form (submit)="onSubmit()" #vehicleForm="ngForm" class="form-row">
+    <mat-form-field id="title-form-field">
+      <input matInput placeholder="Model" name="model" required [(ngModel)]="vehicle.model">
+    </mat-form-field>
+    <mat-form-field id="dni-form-field">
+      <input matInput placeholder="Plate" name="plate" required [(ngModel)]="vehicle.plate">
+    </mat-form-field>
+    <mat-form-field id="phone-form-field">
+      <input matInput placeholder="Max_load" name="max_load" required [(ngModel)]="vehicle.max_load">
+    </mat-form-field>
+    <mat-form-field id="license-form-field">
+      <input matInput placeholder="Volume" name="volume" required [(ngModel)]="vehicle.volume">
+    </mat-form-field>
+
+    <ng-container *ngIf="editMode; else elseTemplate">
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+    </ng-container>
+    <ng-template #elseTemplate>
+      <button mat-raised-button color="primary">Add</button>
+    </ng-template>
+  </form>
+</div>
