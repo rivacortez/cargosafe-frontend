@@ -20,7 +20,7 @@ import {NgIf} from "@angular/common";
   styleUrl: './vehicles-create-and-edit.component.css'
 })
 export class VehiclesCreateAndEditComponent {
-  // Attributes
+
   @Input() vehicle!: VehiclesEntity;
   @Input() editMode: boolean = false;
   @Output() vehicleAddRequested = new EventEmitter<VehiclesEntity>();
@@ -28,19 +28,19 @@ export class VehiclesCreateAndEditComponent {
   @Output() cancelRequested = new EventEmitter();
   @ViewChild('vehicleForm', { static: false }) vehicleForm!: NgForm;
 
-  // Methods
+
   constructor() {
     this.vehicle = new VehiclesEntity({});
   }
 
-  // Private methods
+
   private resetEditState() {
     this.vehicle = new VehiclesEntity({});
     this.editMode = false;
     this.vehicleForm.resetForm();
   }
 
-  // Event Handlers
+
   onSubmit() {
     if (this.vehicleForm.form.valid) {
       let emitter = this.editMode ? this.vehicleUpdateRequested : this.vehicleAddRequested;

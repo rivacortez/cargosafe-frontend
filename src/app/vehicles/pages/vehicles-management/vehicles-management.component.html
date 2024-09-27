@@ -1,6 +1,6 @@
 <div class="vehicles-management-container">
 
-  <!-- Formulario para crear/editar vehículos -->
+
   <app-vehicles-create-and-edit
     (cancelRequested)="onCancelRequested()"
     (vehicleAddRequested)="onVehicleAddRequested($event)"
@@ -9,50 +9,50 @@
     [editMode]="editMode">
   </app-vehicles-create-and-edit>
 
-  <!-- Tabla de vehículos -->
+
   <mat-card class="vehicle-table-card">
     <mat-card-title class="vehicle-mat-card-tittle">Vehicle List</mat-card-title>
     <div class="table-wrapper">
 
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
-        <!-- Columna ID -->
+
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
           <td mat-cell *matCellDef="let vehicle"> {{ vehicle.id }} </td>
         </ng-container>
 
-        <!-- Columna Modelo -->
+
         <ng-container matColumnDef="model">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Model </th>
           <td mat-cell *matCellDef="let vehicle"> {{ vehicle.model }} </td>
         </ng-container>
 
-        <!-- Columna Placa -->
+
         <ng-container matColumnDef="plate">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Plate </th>
           <td mat-cell *matCellDef="let vehicle"> {{ vehicle.plate }} </td>
         </ng-container>
 
-        <!-- Columna Carga Máxima -->
+
         <ng-container matColumnDef="max_load">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Max Load </th>
           <td mat-cell *matCellDef="let vehicle"> {{ vehicle.max_load }} </td>
         </ng-container>
 
-        <!-- Columna Volumen -->
+
         <ng-container matColumnDef="volume">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Volume </th>
           <td mat-cell *matCellDef="let vehicle"> {{ vehicle.volume }} </td>
         </ng-container>
 
-        <!-- Columna Foto -->
+
         <ng-container matColumnDef="photo">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Photo </th>
           <td mat-cell *matCellDef="let vehicle"> <img [src]="vehicle.url_image" alt="Vehicle Photo" width="50"/> </td>
         </ng-container>
 
-        <!-- Columna de Acciones -->
+
         <ng-container matColumnDef="actions">
           <th mat-header-cell *matHeaderCellDef> Actions </th>
           <td mat-cell *matCellDef="let vehicle">
@@ -65,12 +65,12 @@
           </td>
         </ng-container>
 
-        <!-- Filas de la tabla -->
+
         <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
         <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
       </table>
 
-      <!-- Paginador -->
+
       <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="5" showFirstLastButtons></mat-paginator>
     </div>
   </mat-card>

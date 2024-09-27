@@ -10,7 +10,7 @@
 
 .vehicles-form-card,
 .vehicles-table-card {
-  width: 80%; /* Ajusta el ancho de las tarjetas */
+  width: 80%;
   max-width: 1200px;
   margin: 20px auto;
 }
